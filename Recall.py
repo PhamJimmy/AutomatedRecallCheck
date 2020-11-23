@@ -86,8 +86,6 @@ def checkRecall(vehicle):
 
 for toyota in tqdm(toyotas):
     checkRecall(toyota)
-    #print(str(int(round(i/len(toyotas),2)*100)) + "%") #progress checker
-
 
 print("Number of Toyotas/Lexus/Scions with recalls: " + str(len(recalls)))
 print("Number of failed recall checks: " + str(len(timeout)))
