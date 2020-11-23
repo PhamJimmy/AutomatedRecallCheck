@@ -1,6 +1,7 @@
 import requests
 import json
 import math
+from tqdm import tqdm
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
@@ -83,9 +84,9 @@ def checkRecall(vehicle):
     except:
         timeout.append(vehicle)
 
-for i,toyota in enumerate(toyotas,1):
+for toyota in tqdm(toyotas):
     checkRecall(toyota)
-    print(str(int(round(i/len(toyotas),2)*100)) + "%") #progress checker
+    #print(str(int(round(i/len(toyotas),2)*100)) + "%") #progress checker
 
 
 print("Number of Toyotas/Lexus/Scions with recalls: " + str(len(recalls)))
